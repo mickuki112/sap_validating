@@ -59,7 +59,8 @@ class CreateAccount extends Component {
       else
         this.setState({
           password: e.target.value,
-          passwordError: "Wrong password",
+          passwordError:
+            "The password should have a number of uppercase and lowercase letters and a special character",
         });
     } else
       this.setState({
@@ -145,6 +146,7 @@ class CreateAccount extends Component {
           className={styles.button}
           onClick={this.next}
           onChange={this.dateChange}
+          size="medium"
           disabled={
             !(
               !nameError &&

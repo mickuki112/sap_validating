@@ -1,3 +1,11 @@
+%button
+  margin: 22px 20px 0 20px
+  color: #fff
+  background-color: #69e0da
+  &:hover
+    background-color: #69e0da
+    color: #fff
+
 .form
   display: flex
   flex-direction: column
@@ -27,9 +35,18 @@
     margin-bottom: 49px
 
   .button
-      margin: 22px 20px 0 20px
-      color: #fff
-      background-color: #69e0da
-      &:hover
-        background-color: #69e0da
-        color: #fff
+    @extend %button
+
+  .buttonManually
+    width: 283px
+    height: 55px
+    @extend %button
+
+$information-phone: "only screen and (max-width : 568px)"
+
+@media #{$information-phone}
+  .form
+    width: auto
+
+  .container
+    padding: 26px 0

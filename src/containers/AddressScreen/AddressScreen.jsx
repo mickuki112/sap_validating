@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import styles from "./AddressScreen.module.sass";
 import { Paper, Button, TextField } from "@material-ui/core";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import CircleNavigation from "../../components/CircleNavigation/CircleNavigation";
 import Script from "react-load-script";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { validateZip } from "../../common/validation";
 import { countries } from "../../common/countries";
-import NavigateNextIcon from "@material-ui/core/SvgIcon/SvgIcon";
 import { AUTH_KEY_GOOGLE } from "../../config/auth";
 
 class AddressScreen extends Component {
@@ -103,7 +103,6 @@ class AddressScreen extends Component {
       else this.setState({ zip: e.target.value, zipError: "Wrong zip" });
     } else this.setState({ zip: e.target.value, zipError: "Enter the zip" });
   };
-
   next = () => {
     const { addr1, addr2, city, zip, country } = this.state;
     const data = {
@@ -146,7 +145,9 @@ class AddressScreen extends Component {
         <Script url={url} onLoad={this.handleScriptLoad} />
         <CircleNavigation
           active={1}
-          onClickFirstCircle={() => this.props.changeComponent(0)}
+          onClickFirstCircle={() =>
+            this.props.changeComponent({ showComponent: 0 })
+          }
         />
         <h3>Input your address</h3>
         {manually ? (
@@ -225,7 +226,9 @@ class AddressScreen extends Component {
             <Button
               variant="contained"
               onClick={this.next}
-              className={styles.button}
+              endIcon={<NavigateNextIcon />}
+              className={styles.buttonManually}
+              size="medium"
               disabled={
                 !(
                   !addr1Error &&
@@ -239,7 +242,6 @@ class AddressScreen extends Component {
                   country
                 )
               }
-              endIcon={<NavigateNextIcon />}
             >
               Next
             </Button>
