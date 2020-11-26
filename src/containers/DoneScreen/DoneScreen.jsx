@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import styles from './DoneScreen.module.sass'
-import { Paper ,Button,Icon,TextField} from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 import CircleNavigation from '../../components/CircleNavigation/CircleNavigation'
-import { withStyles } from '@material-ui/core/styles';
 
 class DoneScreen extends Component {
 

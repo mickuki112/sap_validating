@@ -94,7 +94,6 @@ class CreateAccount extends Component {
                         className={styles.input}
                         id="email"
                         label="E-Mail"
-                        value={email}
                         helperText={emailError}
                         error={emailError!==''}
                         variant="outlined"/>

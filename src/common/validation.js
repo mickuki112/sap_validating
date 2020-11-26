@@ -7,6 +7,6 @@ export const validateZip = (zip) => {
 	return re.test(String(zip))
 }
 export const validatePassword = (zip) => {
-	const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{1,})")
+	const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%&])(?=.{1,})")
 	return re.test(String(zip))
 }
